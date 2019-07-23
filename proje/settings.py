@@ -20,25 +20,27 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+^3l9%dh+q%(8@fvc&!e8=#em()%0x=w^yc_py&o4+08l^-mi4'
+SECRET_KEY = 'sh9ou&rqwe^1!h+i9usoyk!l%@pr%b9!eu+4h7tk3_5+xg1n0@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'kayıt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3_datetime'
+
+    'kayit',
+
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'proje.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,7 +66,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
             ],
         },
     },
@@ -121,10 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static",)
 
-STATICFILES_DIR = [
-    os.path.join(BASE_DIR, 'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media",)
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

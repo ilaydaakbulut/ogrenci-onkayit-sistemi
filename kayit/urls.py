@@ -3,7 +3,7 @@ from django.urls import include, path
 
 from .views import ogrenci_kayit,ogrenci_viewt
 
-app_name = "kayit"
+app_name = "my_app"
 
 urlpatterns= [
     path('ogrenci_kayit/', ogrenci_kayit, name='ogrenci_kayit'),

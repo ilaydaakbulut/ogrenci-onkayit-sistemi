@@ -48,6 +48,7 @@ class kayitislemi(models.Model):
     def __str__(self):   #veritabanında nasıl görüneceğini belirtir.
         return "%s %s" %(self.isim, self.soyad)
     def get_absolute_url(self):
-        return reverse("ogrenci:ogrenci_kayit_id", kwargs={"id": self.id})
+        return reverse('my_app:ogrenci_kayit_id', kwargs={"id": self.id})
+        #kayit:ogrenci-kayit
 
 
